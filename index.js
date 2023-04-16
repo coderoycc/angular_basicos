@@ -1,0 +1,24 @@
+$(document).ready(()=>{
+  $("#texto").show();
+  $("#pdf").hide();
+  $("#video").hide();
+  $("#pregunta").hide();
+});
+$("#btnTexto").click(()=>{
+  $("#texto").hide();
+  $("#pdf").show();
+  $("#video").hide();
+  $("#pregunta").hide();
+});
+$("#btnPdf").click(()=>{
+  $("#texto").hide();
+  $("#pdf").hide();
+  $("#video").show();
+  $("#pregunta").hide();
+});
+$("#btnVideo").click(()=>{
+  $("#texto").hide();
+  $("#pdf").hide();
+  $("#video").hide();
+  $("#pregunta").show();
+});
