@@ -1,24 +1,24 @@
 $(document).ready(()=>{
-  $("#texto").show();
-  $("#pdf").hide();
-  $("#video").hide();
-  $("#pregunta").hide();
+  $("#texto").show(600);
+  $("#pdf").hide(600);
+  $("#video").hide(600);
+  $("#pregunta").hide(600);
 });
 $("#btnTexto").click(()=>{
-  $("#texto").hide();
-  $("#pdf").show();
-  $("#video").hide();
-  $("#pregunta").hide();
+  $("#texto").hide(600);
+  $("#pdf").show(600);
+  $("#video").hide(600);
+  $("#pregunta").hide(600);
 });
 $("#btnPdf").click(()=>{
-  $("#texto").hide();
-  $("#pdf").hide();
-  $("#video").show();
-  $("#pregunta").hide();
+  $("#texto").hide(600);
+  $("#pdf").hide(600);
+  $("#video").show(600);
+  $("#pregunta").hide(600);
 });
 $("#btnVideo").click(()=>{
-  $("#texto").hide();
-  $("#pdf").hide();
-  $("#video").hide();
-  $("#pregunta").show();
+  $("#texto").hide(600);
+  $("#pdf").hide(600);
+  $("#video").hide(600);
+  $("#pregunta").show(600);
 });
