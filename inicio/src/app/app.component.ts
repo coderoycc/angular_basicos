@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'inicio';
-  contador: number = 0;
-
-  // creamos una funcion
-  increment(){
-    this.contador++;
-  }
-  decrement(){
-    this.contador--;
-  }
-
 }

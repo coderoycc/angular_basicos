@@ -1,0 +1,8 @@
+<h1 align="center">Contador:  {{contador}}</h1>
+
+<hr>
+
+<div>
+  <app-button-add [contador]="contador" (incrementar)="recepcionarIncremento($event)"></app-button-add>
+  <app-button-dis [contador]="contador" (decrementar)="recepcionarDecremento($event)"></app-button-dis>
+</div>
