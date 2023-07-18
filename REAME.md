@@ -66,3 +66,20 @@
   * **NOTA**. En este caso *variableEnviar* funciona como un evento en el componente padre.
   * En el componente padre se debe de recibir los datos mediante el selector del HIJO `<app-nombre-hijo (variableEnviar)="nombreFuncion($event)"></app-nombre-hijo>`
   * En la parte de la lógica del componente padre se debe de crear la función que recibirá los datos y procesarlos de cualquier manera. `nombreFuncion(valorRecibido){...}`
+
+# MODULOS
+* Los módulos son una forma de organizar la aplicación en partes lógicas.
+* Un archivo **module** contiene un decorador `@NgModule` que recibe un objeto con las siguientes propiedades:
+  * declarations: que es un arreglo de componentes, directivas y pipes que pertenecen al módulo *(pedazos de componentes)*.
+  * imports: que es un arreglo de módulos que se importan al módulo. En un componente es recomendable usar el módulo `CommonModule` que contiene las directivas básicas de angular.
+  * exports: que es un arreglo de componentes, directivas y pipes que se exportan para que puedan ser usados fuera del módulo. (**BookComponent**)
+  * providers: que es un arreglo de servicios que se van a utilizar en el módulo.
+  * bootstrap: que es un arreglo de componentes que se van a cargar cuando se inicie la aplicación.
+
+
+# TESTING
+* Algunos de los frameworks que se usan para realizar testing en angular son:
+  * Jasmine: pruebas unitarias y de creacion
+  * Karma
+  * Protractor: mayormente usado en angular 11 *e2e (endtoend)*
+  
