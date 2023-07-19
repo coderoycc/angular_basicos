@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
   styleUrls: ['./contador.component.css']
 })
 export class ContadorComponent{
-  contador: number = 0;
+  contador: number = 10;
 
   recepcionarIncremento(valor: number) {
     // Recepcionamos el valor del componente hijo BUTTON-ADD mediante decorador Output

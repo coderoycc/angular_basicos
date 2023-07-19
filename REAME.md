@@ -82,4 +82,5 @@
   * Jasmine: pruebas unitarias y de creacion
   * Karma
   * Protractor: mayormente usado en angular 11 *e2e (endtoend)*
-  
+* Las pruebas tienen un nombre convencional: `nombre.component.spec.ts` o `nombre.component.test.ts`, pero se recomienda usar **spec**
+* Se pueden hacer pruebas a la **lógica** de la aplicación y pruebas a la **vista** de la aplicación.
