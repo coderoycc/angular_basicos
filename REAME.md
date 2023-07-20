@@ -84,3 +84,65 @@
   * Protractor: mayormente usado en angular 11 *e2e (endtoend)*
 * Las pruebas tienen un nombre convencional: `nombre.component.spec.ts` o `nombre.component.test.ts`, pero se recomienda usar **spec**
 * Se pueden hacer pruebas a la **lógica** de la aplicación y pruebas a la **vista** de la aplicación.
+
+## PRUEBAS A LA LOGICA
+* Son conocidas como pruebas unitarias.
+* Un ejemplo de prueba, se muestra a continuación, tomando de ejemplo la creación de un componente.
+```typescript
+describe('Pruebas de Contador', () => {
+  // bloque que se ejecuta antes de todas las pruebas
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ContadorComponent, ButtonAddComponent],
+    }).compileComponents(); 
+  });
+
+  it('Debe de crear el componente', () => {
+    const fixture = TestBed.createComponent(ContadorComponent);
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+  it('Valor inicial del contador 10', () => {
+    const contador = new ContadorComponent();
+    expect(contador.contador).toBe(10);
+  });
+});
+```
+## PRUEBAS A LA VISTA HTML
+* Estas pruebas son conocidas como pruebas de integración.
+* Un ejemplo de prueba, se muestra a continuación, tomando de ejemplo la renderización de un boton para hacer click en el.
+```typescript
+describe('Pruebas de integracion', ()=>{
+  let fixture: ComponentFixture<ContadorComponent>;
+  let component: ContadorComponent;
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ContadorComponent, ButtonAddComponent],
+    }).compileComponents(); 
+  });
+  beforeEach(()=>{
+    fixture = TestBed.createComponent(ContadorComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('Prueba de evento click', ()=>{
+    const compiled: HTMLElement = fixture.nativeElement;
+    const counterValue = compiled.querySelector('h1')!;
+    // FIXTURE tiene acceso a todos los componentes del template y con debugElement indicamos que interactuaremos con el DOM (button)
+    const btn: HTMLElement = fixture.debugElement.nativeElement.querySelector('#add');
+
+    btn.click(); // simulamos un click
+
+    fixture.detectChanges(); // renderizamos el componente despues de los cambios
+    
+    expect(counterValue?.textContent).toEqual('Contador: 11')
+  })
+
+});
+```
+**NOTA**. Con el símbolo `!` se indica que el elemento no puede ser nulo. Debe existir si o si.
+
+### COBERTURA DE PRUEBAS (COVERAGE)
+* Para saber la cobertura de nuestras pruebas se ejecuta el comando `ng test --code-coverage` y se creará una carpeta llamada **coverage** en la raíz del proyecto.
+* En la carpeta **coverage** se encuentra un archivo **index.html** que se puede abrir en el navegador para ver la cobertura de las pruebas.
+* Tambien se puede ver la cobertura de las pruebas en la terminal. Después de ejecutar el comando. Se muestra un resumen de las pruebas y la cobertura de las mismas.
