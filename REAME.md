@@ -146,3 +146,16 @@ describe('Pruebas de integracion', ()=>{
 * Para saber la cobertura de nuestras pruebas se ejecuta el comando `ng test --code-coverage` y se creará una carpeta llamada **coverage** en la raíz del proyecto.
 * En la carpeta **coverage** se encuentra un archivo **index.html** que se puede abrir en el navegador para ver la cobertura de las pruebas.
 * Tambien se puede ver la cobertura de las pruebas en la terminal. Después de ejecutar el comando. Se muestra un resumen de las pruebas y la cobertura de las mismas.
+
+# DEPLOY o DESPLIEGUE
+* Se debe de ejecutar el comando `ng build` para crear la carpeta **dist** que contiene los archivos para desplegar la aplicación. Antes se usaba **ng build --prod** pero ya no es necesario.
+
+# ESTILOS CSS EN ANGULAR
+## ESTILOS DEDICADOS 
+* Para estilos dedicados se usa el acrhivo **nombre.component.ts** en la parte del decorador `@Component` se usa la propiedad `styleUrls: ['./nombre.component.css']` donde se asignan las rutas de los archivos css que se usarán.
+* Tambien se puede usar la propiedad `styles: ['h1 { color: red; }']` donde se escriben los estilos directamente con strings.
+* Cada estilo es independiente para cada componente. No se puede usar un estilo de un componente en otro componente.
+
+## ESTILOS GLOBALES
+* Para definir estilos globales, se debe incluir los estilos necesarios que sean globales en el archivo **styles.css** que se encuentra en la raíz del proyecto.
+* Estos estilos se compartiran con todos los componentes y todos los archivos.
