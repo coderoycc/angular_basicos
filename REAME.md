@@ -159,3 +159,14 @@ describe('Pruebas de integracion', ()=>{
 ## ESTILOS GLOBALES
 * Para definir estilos globales, se debe incluir los estilos necesarios que sean globales en el archivo **styles.css** que se encuentra en la raíz del proyecto.
 * Estos estilos se compartiran con todos los componentes y todos los archivos.
+
+
+# PWA (PROGRESSIVE WEB APP)
+* Las PWA son aplicaciones web que se comportan como aplicaciones nativas.
+* Para crear una PWA se debe de ejecutar el comando `ng add @angular/pwa` o tambien se puede agregar con `ng add @angular/pwa@1.0.0` para agregar una versión especifica.
+* Requiere que se actalicen las versiones y dependencias de angular.
+
+
+# ACTUALIZAR ANGULAR JUNTO CON TODAS SUS DEPENDENCIAS
+* Para actualizar un proyecto con angular y todas sus dependencias se usa el comando `ng update` tambien las opciones  `ng update --all --force` o `ng update @angular/core @angular/cli --force` para actualizar solo angular y angular-cli.	
+
