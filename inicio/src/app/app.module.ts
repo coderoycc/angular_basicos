@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ContadorModule } from './contador/contador.module';
+import { GridComponent } from './tareas/grid/grid.component';
+import { TareasModule } from './tareas/tareas.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { ContadorModule } from './contador/contador.module';
   ],
   imports: [
     BrowserModule,
-    ContadorModule
+    ContadorModule,
+    TareasModule
   ],
   providers: [],
   bootstrap: [AppComponent]

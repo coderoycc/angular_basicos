@@ -71,11 +71,13 @@
 * Los módulos son una forma de organizar la aplicación en partes lógicas.
 * Un archivo **module** contiene un decorador `@NgModule` que recibe un objeto con las siguientes propiedades:
   * declarations: que es un arreglo de componentes, directivas y pipes que pertenecen al módulo *(pedazos de componentes)*.
-  * imports: que es un arreglo de módulos que se importan al módulo. En un componente es recomendable usar el módulo `CommonModule` que contiene las directivas básicas de angular.
+  * imports: que es un arreglo de módulos que se importan al módulo. En un componente es recomendable usar el módulo `CommonModule` que contiene las directivas básicas de angular `NgFor, NgIf, NgClass, etc.`.
   * exports: que es un arreglo de componentes, directivas y pipes que se exportan para que puedan ser usados fuera del módulo. (**BookComponent**)
   * providers: que es un arreglo de servicios que se van a utilizar en el módulo.
   * bootstrap: que es un arreglo de componentes que se van a cargar cuando se inicie la aplicación.
 
+## Crear un modulo
+* Para crear un módulo se debe de ejecutar el comando `ng g m nombre` o `ng generate module nombre`
 
 # TESTING
 * Algunos de los frameworks que se usan para realizar testing en angular son:
