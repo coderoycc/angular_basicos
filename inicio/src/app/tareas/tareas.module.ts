@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SubtituloComponent } from './subtitulo/subtitulo.component';
 import { ListadoTareasComponent } from './listado-tareas/listado-tareas.component';
 import { GridComponent } from './grid/grid.component';
+import { TareasService } from './services/tareas.service';
 
 
 
@@ -17,7 +18,8 @@ import { GridComponent } from './grid/grid.component';
   ],
   exports:[
     GridComponent
-  ]
+  ],
+  providers: [TareasService]
 })
 export class TareasModule { }
 // Este modulo de tareas contiene los componentes que se van a usar en la app de tareas:

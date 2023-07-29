@@ -172,3 +172,23 @@ describe('Pruebas de integracion', ()=>{
 # ACTUALIZAR ANGULAR JUNTO CON TODAS SUS DEPENDENCIAS
 * Para actualizar un proyecto con angular y todas sus dependencias se usa el comando `ng update` tambien las opciones  `ng update --all --force` o `ng update @angular/core @angular/cli --force` para actualizar solo angular y angular-cli.	
 
+# SERVICIOS (services)
+* Los servicios son clases que se encargan de realizar tareas especificas.
+* En angular se debe de crear una carpeta **services** dentro de la carpeta **app** para almacenar los servicioso tambien se puede crear una carpeta **services** dentro de un modulo para almacenar los servicios que se usaran en ese modulo.
+* Para crear un servicio se debe de ejecutar el comando `ng g s carpeta/nombre_servicio` o `ng generate service services/nombre`
+* Un servicio tiene un decorador `@Injectable` que se encarga de inyectar el servicio en el módulo o componente que lo requiera, este decorador proviene de `@angular/core`.
+## Uso de un servicio
+* Se debe declarar en el archivo **-.module.ts** superior donde se encuentra el servicio.
+* Se declara en la parte de `providers: []` del decorador `@NgModule` o `@Component` dependiendo del archivo donde se encuentre.
+* En el archivo que consume el servicio (componente o modulo) se debe importar el servicio `import { NombreServicio } from './services/nombre.service';`
+* Para usarlo en la parte logica del componente se instancia la variable que contendra el servicio. 
+```ts
+export class NombreComponent {
+  constructor(private nombreServicio: NombreServicio){}
+
+  get variable(){
+    return this.nombreServicio.variable;
+  }
+}
+```
+Comunmente se usa el mismo nombre del servicio pero con minusculas. Y se declara en el constructor del componente.
