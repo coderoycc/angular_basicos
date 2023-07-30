@@ -32,5 +32,13 @@ describe('SubtituloComponent', () => {
     const tareas = render.querySelector("#cantidad")?.textContent?.trim();
     // expect(tareas).toContain("Número de tareas: 4");
     expect(tareas).toEqual("Número de tareas: 4");
+  });
+
+  it("Deberia tener 3 elementos al eliminar una tarea", ()=>{
+    service.deleteTarea(0);
+    fixture.detectChanges();
+    const render: HTMLElement = fixture.nativeElement;
+    const tareas = render.querySelector("#cantidad")?.textContent?.trim();
+    expect(tareas).toEqual("Número de tareas: 3");
   })
 });
