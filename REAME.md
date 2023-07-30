@@ -196,3 +196,27 @@ export class NombreComponent {
 }
 ```
 Comunmente se usa el mismo nombre del servicio pero con minusculas. Y se declara en el constructor del componente.
+
+```dat
+Crear proyecto con api
+MEALDB API
+// Buscar Comidas
+https://www.themealdb.com/api/json/v1/1/search.php?s=<<cadena>>
+
+
+// Lista de comidas por area (pais)
+https://www.themealdb.com/api/json/v1/1/list.php?a=list
+
+// Lista de comidas por ingrediente
+https://www.themealdb.com/api/json/v1/1/list.php?i=list
+
+
+// Listas de comidas por categorias con descripcion
+https://www.themealdb.com/api/json/v1/1/categories.php
+
+// Comida random
+https://www.themealdb.com/api/json/v1/1/random.php
+
+// Comida por ID
+https://www.themealdb.com/api/json/v1/1/lookup.php?i=<<ID>>
+```
