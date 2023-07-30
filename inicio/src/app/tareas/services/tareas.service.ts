@@ -14,4 +14,10 @@ export class TareasService {
   deleteTarea(indice: number){
     this.tareas = this.tareas.filter((_, i) => i !== indice);
   }
+
+  completarTarea(nombre: string){
+    // con el ! indicamos que no puede ser null, existirá seguro
+    const tarea: Tarea = this.tareas.find(t => t.tarea === nombre)!;
+    tarea.completada = !tarea.completada;
+  }
 }

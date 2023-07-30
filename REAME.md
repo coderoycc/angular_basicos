@@ -144,6 +144,10 @@ describe('Pruebas de integracion', ()=>{
 ```
 **NOTA**. Con el símbolo `!` se indica que el elemento no puede ser nulo. Debe existir si o si.
 
+## ESPIAS en TESTING
+* Los espias son funciones que se ejecutan en lugar de la función original.
+* Se puede saber cuantas veces se llama a una función usando `spy.completarTarea.calls.count()` 
+
 ### COBERTURA DE PRUEBAS (COVERAGE)
 * Para saber la cobertura de nuestras pruebas se ejecuta el comando `ng test --code-coverage` y se creará una carpeta llamada **coverage** en la raíz del proyecto.
 * En la carpeta **coverage** se encuentra un archivo **index.html** que se puede abrir en el navegador para ver la cobertura de las pruebas.
