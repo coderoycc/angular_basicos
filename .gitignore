@@ -5,3 +5,11 @@
 /inicio/.angular
 /inicio/coverage
 /inicio/dist
+
+/meal-app/node_modules
+/meal-app/.gitignore
+/meal-app/README.md
+/meal-app/.vscode
+/meal-app/.angular
+/meal-app/coverage
+/meal-app/dist
