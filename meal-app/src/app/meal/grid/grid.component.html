@@ -1,22 +1,7 @@
 <app-navbar></app-navbar>
 
-<mat-grid-list cols="5">
-  <mat-grid-tile>
-    <app-card></app-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-card></app-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-card></app-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-card></app-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-card></app-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-card></app-card>
+<mat-grid-list cols="4">
+  <mat-grid-tile *ngFor="let meal of mealList">
+    <app-card [info]="meal"></app-card>
   </mat-grid-tile>
 </mat-grid-list>

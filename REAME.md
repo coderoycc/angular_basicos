@@ -207,16 +207,24 @@ https://www.themealdb.com/api/json/v1/1/search.php?s=<<cadena>>
 // Lista de comidas por area (pais)
 https://www.themealdb.com/api/json/v1/1/list.php?a=list
 
-// Lista de comidas por ingrediente
+// Lista de ingrediente
 https://www.themealdb.com/api/json/v1/1/list.php?i=list
 
 
 // Listas de comidas por categorias con descripcion
 https://www.themealdb.com/api/json/v1/1/categories.php
 
-// Comida random
+// Comida random (1)
 https://www.themealdb.com/api/json/v1/1/random.php
 
 // Comida por ID
 https://www.themealdb.com/api/json/v1/1/lookup.php?i=<<ID>>
 ```
+
+# Peticiones HTTP
+* Para hacer peticiones HTTP se debe de importar el modulo `HttpClientModule` en el archivo **app.module.ts** o en el modulo donde se vaya a usar. (modulo superior del componente).
+
+* En el servicio (general-local) se debe de importar el modulo `HttpClient` de `@angular/common/http` y se debe de inyectar en el constructor del servicio.
+* En el componente donde se usaran los datos de la petición se debe importar el servicio y se debe de inyectar en el constructor del componente.
+* **NOTA:** Cuando el servicio (archivo) que hace la peticion HTTP tiene el decorador `@Injectable` y dentro tiene `providedIn: 'root'` significa que se puede usar en cualquier componente, caso contrario se deberia de importar en el modulo. (En la parte de providers: []).
+ 
