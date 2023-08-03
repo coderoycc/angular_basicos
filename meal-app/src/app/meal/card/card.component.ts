@@ -7,4 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input() info: any;
+
+  constructor (){
+    console.log(this.info);
+  }
+
+  ngOnInit(): void {
+    console.log(this.info);
+  }
 }

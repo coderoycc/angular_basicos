@@ -227,4 +227,7 @@ https://www.themealdb.com/api/json/v1/1/lookup.php?i=<<ID>>
 * En el servicio (general-local) se debe de importar el modulo `HttpClient` de `@angular/common/http` y se debe de inyectar en el constructor del servicio.
 * En el componente donde se usaran los datos de la petición se debe importar el servicio y se debe de inyectar en el constructor del componente.
 * **NOTA:** Cuando el servicio (archivo) que hace la peticion HTTP tiene el decorador `@Injectable` y dentro tiene `providedIn: 'root'` significa que se puede usar en cualquier componente, caso contrario se deberia de importar en el modulo. (En la parte de providers: []).
- 
+
+# DIFERENCIA ENTRE ONINIT y CONSTUCTOR
+* El constructor se ejecuta antes que el ngOnInit.
+* El constructor se ejecuta antes de que se renderice el componente.

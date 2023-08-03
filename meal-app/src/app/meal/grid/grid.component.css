@@ -1,0 +1,8 @@
+.row-buttons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.btn-arrows{
+  margin: 0 5px;
+}

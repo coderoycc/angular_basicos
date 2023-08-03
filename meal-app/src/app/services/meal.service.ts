@@ -12,4 +12,7 @@ export class MealService {
   getList() {
     return this.http.get('https://www.themealdb.com/api/json/v1/1/search.php?s=');
   }
+  /*Para usar parametros URL se usa la propiedad params de la funcion get 
+  this.http.get('https://www.themealdb.com/api/json/v1/1/', {params: {name: 'Juan', age: 25}});
+  */
 }

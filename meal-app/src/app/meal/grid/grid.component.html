@@ -1,7 +1,20 @@
 <app-navbar></app-navbar>
 
 <mat-grid-list cols="4">
-  <mat-grid-tile *ngFor="let meal of mealList">
+  <mat-grid-tile  *ngFor="let meal of mealList">
     <app-card [info]="meal"></app-card>
   </mat-grid-tile>
 </mat-grid-list>
+
+<div class="row-buttons">
+  <button class="btn-arrows" mat-fab matTooltip="Primary" color="primary" aria-label="Example fab with a heart icon">
+    <mat-icon>
+      arrow_back_ios
+    </mat-icon>
+  </button>
+  <button class="btn-arrows" mat-fab matTooltip="Accent" color="accent" aria-label="Example fab with a heart icon">
+    <mat-icon>
+      arrow_forward_ios
+    </mat-icon>
+  </button>
+</div>
