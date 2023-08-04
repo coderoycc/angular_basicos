@@ -13,6 +13,6 @@ export class CardComponent {
   }
 
   ngOnInit(): void {
-    console.log(this.info);
+    // console.log(this.info);
   }
 }

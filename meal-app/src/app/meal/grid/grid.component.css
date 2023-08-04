@@ -4,5 +4,10 @@
   align-items:center;
 }
 .btn-arrows{
+  margin: 7px;
+}
+.page-number{
+  font-size: 21px;
+  font-weight: bold;
   margin: 0 5px;
 }

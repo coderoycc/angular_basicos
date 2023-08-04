@@ -231,3 +231,11 @@ https://www.themealdb.com/api/json/v1/1/lookup.php?i=<<ID>>
 # DIFERENCIA ENTRE ONINIT y CONSTUCTOR
 * El constructor se ejecuta antes que el ngOnInit.
 * El constructor se ejecuta antes de que se renderice el componente.
+
+# LAZY LOAD
+* El lazy load es una forma de cargar los componentes de manera dinámica.
+* En imagenes se puede usar el atributo `loading="lazy"` para que la imagen se cargue de manera dinámica.
+* En las nuevas versiones se usa la importación de `    NgOptimizedImage,` en el archivo MODULO superior del componente que carga las imagenes.
+  * En la imagen se usa el dataBinding `[ngSrc]="url"`, si la URL viene de una petición es posible que no se resuelva la URL, en ese caso usar `*ngIf="url"` para que se muestre la imagen cuando la URL este disponible.
+  * Tambien se debe usar SI o SI la propiedad `fill` o `width` y `height` para optimizar la carga de las imágenes. Todo esto en la etiqueta **IMG**.
+  * La etiqueta por defecto ya lleva el valor de `loading="lazy"`. 
