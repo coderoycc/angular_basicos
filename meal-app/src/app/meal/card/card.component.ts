@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() info: any;
+  @Input() info: any = {strMealThumb: ''};
 
   constructor (){
     console.log(this.info);

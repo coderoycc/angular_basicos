@@ -148,7 +148,11 @@ describe('Pruebas de integracion', ()=>{
 * Los espias son funciones que se ejecutan en lugar de la función original.
 * Se puede saber cuantas veces se llama a una función usando `spy.completarTarea.calls.count()` 
 
-### COBERTURA DE PRUEBAS (COVERAGE)
+## TESTING DE SERVICIOS HTTP
+* Para hacer pruebas a los servicios HTTP se debe de importar el modulo `HttpClientTestingModule` en el archivo de test.
+
+
+## COBERTURA DE PRUEBAS (COVERAGE)
 * Para saber la cobertura de nuestras pruebas se ejecuta el comando `ng test --code-coverage` y se creará una carpeta llamada **coverage** en la raíz del proyecto.
 * En la carpeta **coverage** se encuentra un archivo **index.html** que se puede abrir en el navegador para ver la cobertura de las pruebas.
 * Tambien se puede ver la cobertura de las pruebas en la terminal. Después de ejecutar el comando. Se muestra un resumen de las pruebas y la cobertura de las mismas.
