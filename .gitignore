@@ -13,3 +13,11 @@
 /meal-app/.angular
 /meal-app/coverage
 /meal-app/dist
+
+/pipeapp/node_modules
+/pipeapp/.gitignore
+/pipeapp/README.md
+/pipeapp/.vscode
+/pipeapp/.angular
+/pipeapp/coverage
+/pipeapp/dist
