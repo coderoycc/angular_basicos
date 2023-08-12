@@ -243,3 +243,12 @@ https://www.themealdb.com/api/json/v1/1/lookup.php?i=<<ID>>
   * En la imagen se usa el dataBinding `[ngSrc]="url"`, si la URL viene de una petición es posible que no se resuelva la URL, en ese caso usar `*ngIf="url"` para que se muestre la imagen cuando la URL este disponible.
   * Tambien se debe usar SI o SI la propiedad `fill` o `width` y `height` para optimizar la carga de las imágenes. Todo esto en la etiqueta **IMG**.
   * La etiqueta por defecto ya lleva el valor de `loading="lazy"`. 
+
+# PIPES
+* Los pipes son filtros que se pueden aplicar a los datos que se muestran en la vista.
+* Existen pipes predefinidos que son: `uppercase, lowercase, date, currency, percent, json, slice, etc.`
+* Tambien se pueden crear pipes personalizados.
+## Pipes personalizados
+* Para crear un pipe personalizado se debe de ejecutar el comando `ng g p pipes/nombre` o `ng generate pipe pipes/nombre`
+* En el modulo superior se debe importar el pipe, en la parte de `declarations`
+* En ese mismo modulo que contiene todos los componentes se puede usar el PIPE ya creado.

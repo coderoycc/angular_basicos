@@ -8,6 +8,7 @@ import { DarkModeService } from 'src/app/shared/services/dark-mode.service';
 })
 export class CustomContainerComponent implements OnInit {
 
+  grados = 12;
   // Inyectamos el servicio DarkModeService
   constructor(private darkModeService: DarkModeService) { }
 
