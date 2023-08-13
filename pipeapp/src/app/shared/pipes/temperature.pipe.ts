@@ -10,7 +10,7 @@ export class TemperaturePipe implements PipeTransform {
       const finalValue = (tipo === "F") ? value * (9 / 5) + 32 : value;
       return `${finalValue.toFixed(2)}°${tipo}`;
     }else{
-      throw new Error('Tipo de temperatura no valido');
+      return '';
     }
   }
 }

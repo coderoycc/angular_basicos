@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CustomContainerComponent } from './custom-container.component';
+import { DarkModePipe } from 'src/app/shared/pipes/dark-mode.pipe';
+import { TemperaturePipe } from 'src/app/shared/pipes/temperature.pipe';
 
 describe('CustomContainerComponent', () => {
   let component: CustomContainerComponent;
@@ -8,7 +10,7 @@ describe('CustomContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomContainerComponent ]
+      declarations: [ CustomContainerComponent, DarkModePipe, TemperaturePipe ]
     })
     .compileComponents();
 
