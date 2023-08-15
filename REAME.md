@@ -232,7 +232,7 @@ https://www.themealdb.com/api/json/v1/1/lookup.php?i=<<ID>>
 * En el componente donde se usaran los datos de la petición se debe importar el servicio y se debe de inyectar en el constructor del componente.
 * **NOTA:** Cuando el servicio (archivo) que hace la peticion HTTP tiene el decorador `@Injectable` y dentro tiene `providedIn: 'root'` significa que se puede usar en cualquier componente, caso contrario se deberia de importar en el modulo. (En la parte de providers: []).
 
-# DIFERENCIA ENTRE ONINIT y CONSTUCTOR
+# DIFERENCIA ENTRE ONINIT y CONSTRUCTOR
 * El constructor se ejecuta antes que el ngOnInit.
 * El constructor se ejecuta antes de que se renderice el componente.
 
@@ -252,3 +252,22 @@ https://www.themealdb.com/api/json/v1/1/lookup.php?i=<<ID>>
 * Para crear un pipe personalizado se debe de ejecutar el comando `ng g p pipes/nombre` o `ng generate pipe pipes/nombre`
 * En el modulo superior se debe importar el pipe, en la parte de `declarations`
 * En ese mismo modulo que contiene todos los componentes se puede usar el PIPE ya creado.
+
+
+# LIFECYCLE HOOKS
+* Los Hooks son aquellas funciones que sirven en momentos determinados de un componente.
+* Algunos de los mas utilizados son `ngOnInit()` `ngOnDestroy()` `ngOnChange()`
+* Se implementan como una interfaz. 
+```ts
+import { Component, OnInit, OnDestroy } from '@angular/core';
+export class AppComponent implements OnInit, OnDestroy{}
+```
+# RXJS 
+* RxJs es una libreria para JS, es una forma de trabajar con reactividad.
+* Util para optimizar las promesas (tener el control) mendiante **obserbables**.
+
+## OBSERVABLE
+* 
+
+## OBSERVER
+* 

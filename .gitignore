@@ -21,3 +21,11 @@
 /pipeapp/.angular
 /pipeapp/coverage
 /pipeapp/dist
+
+/nxjs-directivas/node_modules
+/nxjs-directivas/.gitignore
+/nxjs-directivas/README.md
+/nxjs-directivas/.vscode
+/nxjs-directivas/.angular
+/nxjs-directivas/coverage
+/nxjs-directivas/dist
