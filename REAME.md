@@ -267,7 +267,59 @@ export class AppComponent implements OnInit, OnDestroy{}
 * Util para optimizar las promesas (tener el control) mendiante **obserbables**.
 
 ## OBSERVABLE
-* 
+* Es una herramienta que nos permite manejar flujos de datos (codigo) asíncronos.
+* Un objeto que interactua con el asincronismo y emite eventos para el OBSERVADOR *observer*. Comunmente es definido detro del constructor.
+* Los observables no funcionan sin una suscripcion **subscribe**, este permite seguir al observable.  `myObservable.subscribe()`.
+* Con el observable manejamos el flujo de datos asincrónico y con el subscribe manejamos los datos que nos devuelve el observable.
 
 ## OBSERVER
-* 
+* Es una parte importante del OBSERVABLE, pues este se encarga de emitir los eventos que se realizan en el observable.
+* Algunos de los metodos del **observer** son:
+  * `next(valor)` que devuelve el valor procesado y continua con el proceso.
+  * `closed()` que indica que la suscripcion termina.
+  * `error()` un bandera (notificacion) que indica al subscribe que ocurrio un error en el observer.
+* Ejemplo basico de Observable, subscribe, observer.
+```ts
+constructor(){
+  let numero: number = 0;
+  const myObservable = new Observable<number>((observer) => {
+    setInterval(()=>{
+      numero++;
+      observer.next(numero);
+      // observer.complete()
+      // observer.error()
+    }, 3000);
+  });
+  myObservable.subscribe((resolve)=> console.log(resolve));
+}
+```
+## SUBSCRIBE
+* Llamada que se encarga de obtener el flujo de datos procesado por un OBSERVABLE.
+* Un subscribe tiene tres propiedades (callbacks) al suscribirse a un observable. (Rx)
+  * `resolve`: cuando se resuelve correctamente el procesamiento de datos.
+  * `error`: en caso de que ocurra un error.
+  * `complete`: cuando el observe acabó de procesar los datos.
+* Los valores se escriben dentro de un objeto con los eventos que se emiten desde el observable.
+```ts
+myObservable.subscribe({
+  next: (value)=>{
+    console.log('El valor es: ', value)
+  },
+  error: (err) =>{
+    console.warn('Ocurrio un error')
+  },
+  complete: () => {
+    console.log('Completado')
+  }
+})
+```
+### Operadores en los SUBSCRIBE
+Existen operadores que permiten preprocesar los datos antes de recuperarlos en el subscribe. 
+
+* `Filter`: Nos permite filtrar valores del observable para posteriormente pasarlo al subscribe.
+```ts
+// en este ejemplo se usa el Observable INTERVAL con un filter de todos los numeros pares
+this.miIntevalo
+  .pipe(filter((x) => x%2===0))
+  .subscribe(value =>{console.log(value)})
+```

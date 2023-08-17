@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, filter, interval } from 'rxjs';
 
 @Component({
   selector: 'app-container',
@@ -7,6 +7,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
-
-  myObservable = new Observable<number>();
+  miIntevalo: Observable<number> = interval(1000);
+  constructor(){
+  }
+  ngOnInit(){
+    this.miIntevalo
+      .pipe(filter((x) => x%2===0))
+      .subscribe(value =>{console.log(value)})
+  }
 }
+
