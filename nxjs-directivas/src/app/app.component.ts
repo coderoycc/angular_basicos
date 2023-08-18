@@ -8,6 +8,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class AppComponent implements OnInit, OnDestroy{
   title = 'nxjs-directivas';
 
+  visible = true;
+
+  setVisible(){
+    this.visible = !this.visible;
+  }
+  
   ngOnInit(){
 
   }

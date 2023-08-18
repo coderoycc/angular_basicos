@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
-import { Observable, filter, interval } from 'rxjs';
+import { Subscription, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
-  styleUrls: ['./container.component.css']
+  styleUrls: ['./container.component.css'],
 })
-export class ContainerComponent {
-  miIntevalo: Observable<number> = interval(1000);
-  constructor(){
-  }
+export class ContainerComponent{
+  subscriptor: Subscription | null = null
+  
+  x: number = 0
+  y: number = 0
   ngOnInit(){
-    this.miIntevalo
-      .pipe(filter((x) => x%2===0))
-      .subscribe(value =>{console.log(value)})
+    const event = fromEvent<MouseEvent>(document.querySelector("#area")!, "mousemove"); 
+    this.subscriptor = event.subscribe((ev) => {
+      this.x = ev.clientX
+      this.y = ev.clientY
+    })
+  }
+  ngOnDestroy(){
+    this.subscriptor?.unsubscribe()
   }
 }
-
