@@ -403,3 +403,20 @@ miIntevalo: Observable<number> = interval(1000).pipe(
     console.log('Componente destruido');
   }
 ```
+# DIRECTIVAS
+* Son instrucciones que se ejecutan en el DOM.
+* Existen dos tipos de directivas:
+  * Directivas estructurales: que son las que modifican el DOM. Ejemplo: `*ngIf, *ngFor, *ngSwitch, etc.`
+  * Directivas de atributos: que son las que modifican los atributos de los elementos del DOM. Ejemplo: `ngClass, ngStyle, etc.`
+* Se pueden crear directivas personalizadas con el comando `ng g d directives/nombre` o `ng generate directive directives/nombre`
+* En la parte de `declarations` del modulo superior se debe de importar la directiva.
+* Para usar la directiva debemos usar el selector que se encuentra en la directiva. Ejemplo: `<p appResaltado>Directiva personalizada</p>`
+## Configurar directivas (parametros)
+* Se usa un Input para recibir parametros. Ejemplo:
+```ts
+@Input('appResaltado') nuevoColor: string = 'yellow';
+```
+* En el archivo HTML se debe de enviar el parametro. Ejemplo:
+```html
+<p [appResaltado]="'red'">Directiva personalizada</p>
+```
