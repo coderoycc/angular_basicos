@@ -29,3 +29,11 @@
 /nxjs-directivas/.angular
 /nxjs-directivas/coverage
 /nxjs-directivas/dist
+
+/formularios/node_modules
+/formularios/.gitignore
+/formularios/README.md
+/formularios/.vscode
+/formularios/.angular
+/formularios/coverage
+/formularios/dist
