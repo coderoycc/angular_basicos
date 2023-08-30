@@ -420,3 +420,22 @@ miIntevalo: Observable<number> = interval(1000).pipe(
 ```html
 <p [appResaltado]="'red'">Directiva personalizada</p>
 ```
+
+# FORMULARIOS EN ANGULAR
+* Para trabajar con formularios en angular se debe de importar el modulo `FormsModule` en el archivo **app.module.ts** o en el modulo superior donde se vaya a usar.
+## Nombre de un formulario
+El nombre se puede poner con el simbolo `#`. Tambien es conocido como referencia local, solo es perceptible desde el HTML, a no ser que sea referenciado mediante una funcion. Ejemplo:
+```html
+<form (ngSubmit)="enviar(miFormulario)" #miFormulario="ngForm" #miFormulario>
+```
+* Para usar el valor del formulario se puede definir con ViewChild. Ejemplo:
+```ts
+@ViewChild('miFormulario') miFormulario!: NgForm;
+```
+
+* Para usar el nombre del formulario con ngForm.
+`#miFormulario="ngForm"`. 
+* De esta manera obtenermos el objeto ngForm que contiene los datos del formulario.
+* Al tener el valor del formulario podemos acceder a los datos del formulario mediante `miFormulario.value`.
+
+**TIP**: Para usar estilos globales se puede modificar el archivo angular.json en la parte de `styles` y agregar los estilos globales que se deseen. Desde la carpeta de node_modules. 

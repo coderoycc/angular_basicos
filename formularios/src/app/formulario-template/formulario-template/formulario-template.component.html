@@ -1,18 +1,25 @@
-<form autocomplete="off">
+
+<form class="form-group" (ngSubmit)="agregar()" autocomplete="off"  #miFormulario="ngForm">
+  <div *ngIf="miFormulario.invalid && miFormulario.touched" class="alert alert-danger d-flex align-items-center" role="alert">
+    <i class="bi bi-exclamation-diamond-fill"> &nbsp;</i>
+    <div>
+      Formulario ínvalido
+    </div>
+  </div>
   <div>
     <label for="proyecto">Proyecto</label>
-    <input class="form-control" type="text" id="proyecto" placeholder="NOmbre del proyecto">
+    <input class="form-control" type="text" id="proyecto" placeholder="NOmbre del proyecto" ngModel name="proyecto" maxlength="5" minlength="2" required>
   </div>
   <div>
     <label for="horas">Horas</label>
-    <input class="form-control" type="number" id="horas" placeholder="horas para completar">
+    <input class="form-control" type="number" id="horas" placeholder="horas para completar" ngModel name="horas" min="0" max="25" required>
   </div>
   
   <div>
     <label for="tecnologias">Tecnologias</label>
     <div class="row">
       <div class="col-12 col-md-8">
-        <input class="form-control" type="text" id="tecnologias" placeholder="NOmbre de la tecnologia">
+        <input class="form-control" [ngClass]="true ? 'is-invalid': ''" id="tecnologias" placeholder="NOmbre de la tecnologia" minlength="5" maxlength="12" ngModel name="tecnologia">
       </div>
       <div class="col-12 col-md-4">
         <button class="btn btn-success">Agregar tecnología</button>
@@ -22,3 +29,10 @@
 
   <button class="btn btn-warning mt-2 mr-2 w-50" type="submit">Agregar proyecto</button>
 </form>
+
+<pre>
+  DATOS: {{miFormulario.value | json}}
+  VALIDO: {{miFormulario.valid | json}}
+  ERRORES: {{miFormulario.controls["proyecto"]?.errors | json}}
+  ERRORES: {{miFormulario.controls["tecnologia"]?.errors == null }}
+</pre>
