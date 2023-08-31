@@ -438,4 +438,26 @@ El nombre se puede poner con el simbolo `#`. Tambien es conocido como referencia
 * De esta manera obtenermos el objeto ngForm que contiene los datos del formulario.
 * Al tener el valor del formulario podemos acceder a los datos del formulario mediante `miFormulario.value`.
 
-**TIP**: Para usar estilos globales se puede modificar el archivo angular.json en la parte de `styles` y agregar los estilos globales que se deseen. Desde la carpeta de node_modules. 
+**TIP**: Para usar estilos globales se puede modificar el archivo angular.json en la parte de `styles` y agregar los estilos globales que se deseen. Desde la carpeta de node_modules.
+
+# FORMULARIOS DINAMICOS
+* Algunas validaciones importantes. Se usan con el objeto de NGFORM
+* Debe estar definido como una variable en el archivo TS.
+* Con eso se puede interactuar con los valores del formulario, usando `this.miFormulario.controls['nombreControl'].value` tambien con `this.miFormulario.controls['nombreControl'].valid`, `this.miFormulario.controls['nombreControl'].touched` o `this.miFormulario.controls['tecnologia'].reset()`
+
+## Two way data binding
+* Es una forma de enlazar los datos del formulario con el componente.
+* Se usa con la directiva `[(ngModel)]="variable"` en la etiqueta HTML.
+* Ese doble enlace de datos permite que los datos se actualicen en el componente y en el formulario al mismo tiempo.
+* Ejemplo.
+```html
+<input type="text" [(ngModel)]="dataForm.nombre" name="nombre" id="nombre" class="form-control" required>
+```
+```ts
+  initialForm = {
+    proyecto: "",
+    tecnologia: "",
+    horas: 0
+  }
+  // las llaves deben ser iguales a los names del formulario
+```

@@ -1,6 +1,6 @@
 
 <form class="form-group" (ngSubmit)="agregar()" autocomplete="off"  #miFormulario="ngForm">
-  <div *ngIf="miFormulario.invalid && miFormulario.touched" class="alert alert-danger d-flex align-items-center" role="alert">
+  <div *ngIf="mensajeError" class="alert alert-danger d-flex align-items-center" role="alert">
     <i class="bi bi-exclamation-diamond-fill"> &nbsp;</i>
     <div>
       Formulario ínvalido
@@ -8,21 +8,26 @@
   </div>
   <div>
     <label for="proyecto">Proyecto</label>
-    <input class="form-control" type="text" id="proyecto" placeholder="NOmbre del proyecto" ngModel name="proyecto" maxlength="5" minlength="2" required>
+    <input class="form-control" type="text" id="proyecto" placeholder="NOmbre del proyecto" name="proyecto" maxlength="5" minlength="2" [(ngModel)]="initialForm.proyecto" required>
   </div>
   <div>
     <label for="horas">Horas</label>
-    <input class="form-control" type="number" id="horas" placeholder="horas para completar" ngModel name="horas" min="0" max="25" required>
+    <input class="form-control" type="number" id="horas" placeholder="horas para completar" [(ngModel)]="initialForm.horas" name="horas" min="0" max="25" required>
   </div>
   
   <div>
     <label for="tecnologias">Tecnologias</label>
     <div class="row">
       <div class="col-12 col-md-8">
-        <input class="form-control" [ngClass]="true ? 'is-invalid': ''" id="tecnologias" placeholder="NOmbre de la tecnologia" minlength="5" maxlength="12" ngModel name="tecnologia">
+        <input class="form-control" id="tecnologias" placeholder="Nombre de la tecnologia" minlength="2" maxlength="12" [(ngModel)]="initialForm.tecnologia" name="tecnologia" required>
       </div>
       <div class="col-12 col-md-4">
-        <button class="btn btn-success">Agregar tecnología</button>
+        <button type="button" (click)="agregarTec()" class="btn btn-success">Agregar tecnología</button>
+      </div>
+      <div class="col-12 mt-2">
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item" *ngFor="let tec of tecnologias">{{tec}}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -31,8 +36,5 @@
 </form>
 
 <pre>
-  DATOS: {{miFormulario.value | json}}
-  VALIDO: {{miFormulario.valid | json}}
-  ERRORES: {{miFormulario.controls["proyecto"]?.errors | json}}
-  ERRORES: {{miFormulario.controls["tecnologia"]?.errors == null }}
+  DATOS: {{this.proyectos | json}}
 </pre>
