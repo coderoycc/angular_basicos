@@ -461,3 +461,39 @@ El nombre se puede poner con el simbolo `#`. Tambien es conocido como referencia
   }
   // las llaves deben ser iguales a los names del formulario
 ```
+
+# FORMULARIOS REACTIVOS
+* Los formularios reactivos son una forma de trabajar con formularios en angular.
+* Se debe de importar el modulo `ReactiveFormsModule` en el archivo **app.module.ts** o en el modulo superior donde se vaya a usar.
+* Los formularios reactivos se crean con el objeto `FormGroup` de `@angular/forms`.
+## Form Group
+* Es un objeto que contiene los datos del formulario.
+* Se debe de importar el objeto `FormGroup` de `@angular/forms`.
+* Es un poco complejo sis se trabajan con varios campos.
+
+## Form Builder
+* Es una forma de crear formularios reactivos de manera mas sencilla.
+* Se debe de importar el objeto `FormBuilder` de `@angular/forms`.
+* El FormBuilder nos provee de metodos para definir un campo del formulario. Entre ellos están: `control, group, array, etc.`
+* ejemplo de uso del FormBuilder.
+```ts
+contructor(private fb: FormBuilder){}
+miFormulario: FormGroup = this.fb.group({
+  nombre: this.fb.control(''),
+  productos: this.fb.array([
+    this.fb.control('')
+  ]),
+  precio: [0, [Validators.required, Validators.min(0)]],
+  existencias: [0, [Validators.required, Validators.min(0)]]
+})
+```
+```html
+<form [formGroup]="miFormulario">
+  ...
+  <input type="" formControlName="nombre">
+</form>
+```
+
+## Validators
+* Las validaciones pueden ser sincronas o asincronas.
+* 
